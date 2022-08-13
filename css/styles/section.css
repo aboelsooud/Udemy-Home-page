@@ -1,0 +1,172 @@
+
+.courses{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.courses > h2{
+    font-size: 180%;
+}
+
+.courses > p{
+    font-size: 130%;
+    margin-bottom: 2%;
+}
+
+
+.topics-tap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 15px;
+    font-size: 120%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.topics-tap > input{
+    display: none;
+}
+
+.topics-tap > label{
+    display: inline-block;
+    color: rgb(158, 157, 157);
+}
+
+.topics-tap > input:checked + label{
+    color:black;
+    font-weight: bold;
+}
+
+.topics-tap > input:hover + label{
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.explain{
+    border: 1px solid rgb(188, 186, 186);
+    padding: 4%;
+}
+
+.explain > h3{
+    padding: 10px;
+    font-size: 120%;
+    margin-bottom: -5px;
+}
+.explain > p{
+    padding-left: 10px; 
+    width: 70%;
+    font-size: 100%;
+}
+
+.explain > a{
+    display: inline-block;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 1%;
+    text-decoration: none;
+}
+
+
+.explain > a:hover{
+    color: black;
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+.explain > a:visited{
+    color: black;
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container > a{
+    display: flex;
+    width: calc(100% / 1);
+    justify-content: center;
+    text-decoration: none;
+}
+
+.container > a:hover{
+    color: rgb(134, 131, 131);
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+.container > a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+.course{
+    width: 100%;
+    align-items: center;
+    margin: 5px;
+}
+
+.thumb{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -15px;
+}
+
+.course > p{
+    color: rgb(83, 83, 83);
+}
+
+.rating{
+    font-size: 85%;
+    color: goldenrod;
+}
+
+.rate{
+    color: gray;
+}
+
+del{
+    color: rgb(103, 101, 101);
+    font-size: 90%;
+}
+
+
+@media screen and (min-width: 550px) {
+    .container > a{
+        width: calc(100%/2);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container > a{
+        width: calc(100%/3);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .courses{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container > a{
+        width: calc(100%/4);
+    }
+}
+
+
+@media screen and (min-width: 1500px) {
+    .container > a{
+        width: calc(100%/5);
+    }
+}

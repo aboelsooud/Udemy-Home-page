@@ -1,0 +1,148 @@
+nav{
+    font-size: 90%;
+    display: flex;
+    width: calc(100% - 20px);
+    padding: 10px;
+    box-shadow: 0px 3px 3px rgb(195, 188, 188);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 90px;
+}
+
+.nav-items{
+    display: inline-block;
+}
+
+.link{
+    color: rgb(3, 3, 53);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.link:visited{
+    color: rgb(3, 3, 53);
+}
+
+.link:hover{
+    color: rgb(100, 7, 100);
+}
+
+.search-bar{
+    width: 60%;
+    border: 1px solid rgb(15, 15, 15);
+    border-radius: 40px;
+    padding: 10px;
+    background-color: rgb(244, 244, 244);
+}
+
+.search-bar > button{
+    background-color: transparent;
+    border: none;
+    outline-width: 0;
+}
+
+.search-bar > input{
+    border:none;
+    outline-width: 0;
+    width: 88%;
+    background-color: rgb(244, 244, 244);
+
+}
+
+.cart{
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    color:rgb(3, 3, 53);
+    border: none;
+    font-size: 90%;
+    font-weight: 550;
+}
+
+
+.log{
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    color:rgb(3, 3, 53);
+    border-width: 1px;
+    border-color: rgb(3, 3, 53);
+    font-size: 90%;
+    font-weight: 550;
+    white-space: nowrap;
+}
+
+.sign{
+    width: 80px;
+    height: 40px;
+    background-color: rgb(3, 3, 53);
+    color:white;
+    border-width: 1px;
+    border-color: rgb(3, 3, 53);
+    font-size: 80%;
+    font-weight: 550;
+    white-space: nowrap;
+}
+
+.lang{
+    height: 40px;
+    background-color: white;
+    color:rgb(3, 3, 53);
+    border-width: 1px;
+    border-color: rgb(3, 3, 53);
+    font-size: 90%;
+    font-weight: 550;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+/* mobile screen */
+
+@media screen and (max-width: 800px) {
+    .display-small{
+        display: none;
+    }
+    nav{
+        justify-content: space-between;
+    }
+}
+
+/* small screen */
+
+@media screen and (min-width: 801px) {
+    .display-bar, .display-udemyBusiness, .display-teach{
+        display: none;
+    }
+}
+
+/* medium screen */
+
+@media screen and (min-width: 1040px) {
+    .display-bar{
+        display: none;
+    }
+    .display-teach{
+        display: inline-block;
+    }
+}
+
+/* large screen */
+
+@media screen and (min-width: 1200px) {
+    .display-bar{
+        display: none;
+    }
+    .display-teach, .display-udemyBusiness{
+        display: inline-block;
+    }
+    nav{
+        justify-content: space-between;
+    }
+}
+
