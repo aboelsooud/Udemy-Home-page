@@ -1,4 +1,3 @@
-
 .courses{
     width: 90%;
     margin-left: auto;
@@ -49,7 +48,9 @@
 
 .explain{
     border: 1px solid rgb(188, 186, 186);
-    padding: 4%;
+    padding-top: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .explain > h3{
