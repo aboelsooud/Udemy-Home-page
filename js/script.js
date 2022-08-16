@@ -1,20 +1,26 @@
-var data;
+let data;
+
+// getting the section we need to change
 let section = document.querySelector(".explain");
+
 
 let courses = ["Python", "AWS", "Data Science", "Excel", "Web Development", "JavaScript", "Drawing"]
 
 let cur_course = "Python";
 
+//getting data from api and storing it data variable
 function fetchdata(){
     const response = fetch("https://api.jsonbin.io/v3/b/62fa4cbfe13e6063dc7c1810")
     .then(response => response.json())
     .then(res =>{
         data = res;
+        //build the courses of the defult topic "python"
         build_description(cur_course);
     });
 }
 
 
+//build the description and the button above the courses
 function build_description(course){
     section.innerHTML = "";
     const description = `
@@ -28,9 +34,11 @@ function build_description(course){
 }
 
 
+// building courses
 function build_cards(course = "", search = undefined){
     cards_container = document.createElement("section");
     cards_container.className = "container";
+    // building cards
     for(const item of courses){
         if(search != undefined) course = item;
         if(item == course){
@@ -111,6 +119,8 @@ function build_cards(course = "", search = undefined){
     section.appendChild(cards_container);
 }
 
+
+// change the courses when change the topic
 for(const item in courses){
     const course = document.getElementById(courses[item]);
     course.addEventListener("change", function(){
@@ -119,7 +129,7 @@ for(const item in courses){
     })
 }
 
-
+// building searching description
 function build_search(searchvalue){
     section.innerHTML = "";
     const description = `
@@ -130,11 +140,12 @@ function build_search(searchvalue){
     build_cards("", searchvalue);
 }
 
-
+// search on submit in search bar
 document.forms[0].onsubmit = function(e){
     e.preventDefault();
     let searchvalue = document.querySelector("[class = 'search-field']").value;
     build_search(searchvalue);
 }   
 
+// featch the data on loading 
 fetchdata();

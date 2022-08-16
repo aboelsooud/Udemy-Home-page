@@ -14,7 +14,7 @@
 }
 
 
-.topics-tap{
+.topics-tab{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -24,21 +24,21 @@
     margin-top: 20px;
 }
 
-.topics-tap > input{
+.topics-tab > input{
     display: none;
 }
 
-.topics-tap > label{
+.topics-tab > label{
     display: inline-block;
     color: rgb(158, 157, 157);
 }
 
-.topics-tap > input:checked + label{
+.topics-tab > input:checked + label{
     color:black;
     font-weight: bold;
 }
 
-.topics-tap > input:hover + label{
+.topics-tab > input:hover + label{
     color:black;
     font-weight: bold;
     cursor: pointer;
@@ -124,9 +124,11 @@
 
 .course > p{
     color: rgb(83, 83, 83);
+    margin-top: -12px;
 }
 
 .rating{
+    margin-top: -8px;
     font-size: 85%;
     color: goldenrod;
     font-weight: bold;
@@ -163,12 +165,5 @@ del{
 @media screen and (min-width: 1200px) {
     .container > a{
         width: calc(100%/4);
-    }
-}
-
-
-@media screen and (min-width: 1500px) {
-    .container > a{
-        width: calc(100%/5);
     }
 }
