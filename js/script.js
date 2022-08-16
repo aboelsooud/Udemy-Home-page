@@ -36,7 +36,10 @@ function build_cards(course = "", search = undefined){
         if(item == course){
             for(const item in data.record[course].courses){
                 if(search != undefined){
-                    if(!data.record[course].courses[item].title.includes(search)) continue;
+                    let title = data.record[course].courses[item].title;
+                    title = title.toLowerCase()
+                    search = search.toLowerCase()
+                    if(!title.includes(search)) continue;
                 }
                 
                 let instructor = "";
