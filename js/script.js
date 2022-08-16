@@ -144,7 +144,11 @@ function build_search(searchvalue){
 document.forms[0].onsubmit = function(e){
     e.preventDefault();
     let searchvalue = document.querySelector("[class = 'search-field']").value;
-    build_search(searchvalue);
+    let x = searchvalue.split(' ').length - 1;
+    // prevent searching on empty or only spaces values 
+    if(searchvalue !== '' &&  x !== searchvalue.length){
+        build_search(searchvalue);
+    }
 }   
 
 // featch the data on loading 
