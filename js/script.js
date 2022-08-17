@@ -1,7 +1,7 @@
 let data;
 
 // getting the section we need to change
-let section = document.querySelector(".explain");
+let section = document.querySelector(".explain_");
 
 
 let courses = ["Python", "AWS", "Data Science", "Excel", "Web Development", "JavaScript", "Drawing"]
@@ -37,7 +37,7 @@ function build_description(course){
 // building courses
 function build_cards(course = "", search = undefined){
     cards_container = document.createElement("section");
-    cards_container.className = "container";
+    cards_container.className = "container_";
     // building cards
     for(const item of courses){
         if(search != undefined) course = item;
@@ -58,16 +58,16 @@ function build_cards(course = "", search = undefined){
 
                 cardlink = document.createElement("a");
                 cardlink.href = "";
-                cards_container.className = "container";
+                cards_container.className = "container_";
                 datacontainer = document.createElement("div");
-                datacontainer.className = "course";
+                datacontainer.className = "course_";
 
                 image = document.createElement("img");
                 image.src = data.record[course].courses[item].image;
                 image.alt = "course thumbnail";
-                image.className = "thumb";
+                image.className = "thumb_";
                 
-                heading = document.createElement("h4");
+                heading = document.createElement("h6");
                 headingtxt = document.createTextNode(data.record[course].courses[item].title);
                 heading.appendChild(headingtxt);
                 
@@ -76,7 +76,7 @@ function build_cards(course = "", search = undefined){
                 names.appendChild(namestxt);
 
                 ratingcontainer = document.createElement("div");
-                ratingcontainer.className = "rating";
+                ratingcontainer.className = "rating_";
                 
                 rate = document.createElement("span");     
                 ratetxt = document.createTextNode(data.record[course].courses[item].rating.toFixed(2) + " "); 
@@ -133,7 +133,7 @@ for(const item in courses){
 function build_search(searchvalue){
     section.innerHTML = "";
     const description = `
-    <h2>Your search results for "${searchvalue}" are: </h2>
+    <h3>Your search results for "${searchvalue}" are: </h3>
     <br><br>
     `
     section.innerHTML += description;
@@ -143,7 +143,7 @@ function build_search(searchvalue){
 // search on submit in search bar
 document.forms[0].onsubmit = function(e){
     e.preventDefault();
-    let searchvalue = document.querySelector("[class = 'search-field']").value;
+    let searchvalue = document.querySelector("[class = 'search-field_']").value;
     let x = searchvalue.split(' ').length - 1;
     // prevent searching on empty or only spaces values 
     if(searchvalue !== '' &&  x !== searchvalue.length){

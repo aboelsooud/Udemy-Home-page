@@ -1,20 +1,20 @@
-.courses{
+.courses_{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.courses > h2{
+.courses_ > h2{
     font-size: 180%;
 }
 
-.courses > p{
+.courses_ > p{
     font-size: 130%;
     margin-bottom: 2%;
 }
 
 
-.topics-tab{
+.topics-tab_{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -24,21 +24,21 @@
     margin-top: 20px;
 }
 
-.topics-tab > input{
+.topics-tab_ > input{
     display: none;
 }
 
-.topics-tab > label{
+.topics-tab_ > label{
     display: inline-block;
     color: rgb(158, 157, 157);
 }
 
-.topics-tab > input:checked + label{
+.topics-tab_ > input:checked + label{
     color:black;
     font-weight: bold;
 }
 
-.topics-tab > input:hover + label{
+.topics-tab_ > input:hover + label{
     color:black;
     font-weight: bold;
     cursor: pointer;
@@ -46,26 +46,25 @@
 
 
 
-.explain{
+.explain_{
     border: 1px solid rgb(188, 186, 186);
     padding-top: 2%;
     padding-bottom: 2%;
-    padding-left: 4%;
-    padding-right: 4%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.explain > h3{
+.explain_ > h3{
     padding: 10px;
-    font-size: 120%;
-    margin-bottom: -5px;
+    font-size: 150%;
 }
-.explain > p{
+.explain_ > p{
     padding-left: 10px; 
     width: 70%;
     font-size: 100%;
 }
 
-.explain > a{
+.explain_ > a{
     display: inline-block;
     border: 2px solid black;
     padding: 15px;
@@ -74,68 +73,69 @@
 }
 
 
-.explain > a:hover{
+.explain_ > a:hover{
     color: black;
     background-color: whitesmoke;
     text-decoration: none;
 }
 
-.explain > a:visited{
+.explain_ > a:visited{
     color: black;
     background-color: whitesmoke;
     text-decoration: none;
 }
 
 
-.container{
+.container_{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.container > a{
+.container_ > a{
     display: flex;
     width: calc(100% / 1);
     justify-content: center;
     text-decoration: none;
 }
 
-.container > a:hover{
+.container_ > a:hover{
     color: rgb(134, 131, 131);
     background-color: whitesmoke;
     text-decoration: none;
 }
 
-.container > a:visited{
+.container_ > a:visited{
     color: black;
     text-decoration: none;
 }
 
-.course{
+.course_{
     width: 100%;
     align-items: center;
     margin: 5px;
 }
 
-.thumb{
+.thumb_{
     display: inline-block;
     width: 100%;
-    margin-bottom: -15px;
+    margin-bottom: 15px;
 }
 
-.course > p{
+.course_ > p{
     color: rgb(83, 83, 83);
-    margin-top: -12px;
+    font-size: 90%;
+    margin-top: -5px;
+    margin-bottom: -1px;
 }
 
-.rating{
-    margin-top: -8px;
+.rating_{
     font-size: 85%;
     color: goldenrod;
     font-weight: bold;
 }
 
-.rate{
+.rate_{
     color: gray;
 }
 
@@ -145,26 +145,34 @@ del{
 }
 
 
+.last-section{
+    width: 90%;
+}
+
+
 @media screen and (min-width: 550px) {
-    .container > a{
+    .container_ > a{
         width: calc(100%/2);
     }
 }
 
 @media screen and (min-width: 800px) {
-    .container > a{
+    .container_ > a{
         width: calc(100%/3);
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .courses{
+    .courses_{
+        width: 70%;
+    }
+    .last-section{
         width: 70%;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .container > a{
+    .container_ > a{
         width: calc(100%/4);
     }
 }
