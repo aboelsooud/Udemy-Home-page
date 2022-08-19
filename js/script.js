@@ -188,6 +188,57 @@ function build_card(course, item){
 }
 
 
+// media query for number of course cards
+
+function changeMediaQuery(){
+    function change4(four){
+        if(four.matches){
+            n = 4;
+        }
+    }
+
+    function change3(three){
+        if(three.matches){
+            n = 3;
+        }
+    }
+
+    function change2(two){
+        if(two.matches){
+            n = 2;
+        }
+        
+    }
+
+    function change1(one){
+        if(one.matches){
+            n = 1;
+        }
+        
+    }
+
+
+    let four = window.matchMedia("(min-width: 1200px)");
+    let three = window.matchMedia("(min-width: 800px) and (max-width: 1199px)");
+    let two = window.matchMedia("(min-width: 550px) and (max-width: 799px)");
+    let one = window.matchMedia("(min-width: 100px) and (max-width: 549px)");
+
+    change1(one);
+    change2(two);
+    change3(three);
+    change4(four);
+
+    one.addListener(change1);
+    two.addListener(change2);
+    three.addListener(change3);
+    four.addListener(change4);
+
+}
+
+
+// featch the data on loading 
+fetchdata();
+
 
 // change the courses when change the topic
 for(const item in courses){
@@ -221,9 +272,19 @@ document.forms[0].onsubmit = function(e){
 }   
 
 
-// featch the data on loading 
-fetchdata();
 
+changeMediaQuery();
+
+
+window.addEventListener("resize", function(){
+    changeMediaQuery();
+    let searchvalue = document.querySelector("[class = 'search-field_']").value;
+    let x = searchvalue.split(' ').length - 1;
+    if(searchvalue !== '' &&  x !== searchvalue.length){
+        build_search(searchvalue);
+    }else
+        build_description(cur_course);
+})
 
 
 
