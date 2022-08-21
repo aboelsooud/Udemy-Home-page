@@ -1,11 +1,7 @@
 let data;
-
 // getting the section we need to change
-let section = document.querySelector(".explain_");
-
-
-let courses = ["Python", "AWS", "Data Science", "Excel", "Web Development", "JavaScript", "Drawing"]
-
+const section = document.querySelector(".explain_");
+const courses = ["Python", "AWS", "Data Science", "Excel", "Web Development", "JavaScript", "Drawing"]
 let cur_course = "Python", n = 4;
 
 //getting data from api and storing it data variable
@@ -19,7 +15,6 @@ function fetchdata(){
     });
 }
 
-
 //build the description and the button above the courses
 function build_description(course){
     section.innerHTML = "";
@@ -29,10 +24,8 @@ function build_description(course){
         <a href=""><b>Explore ${course}</b></a>
     `
     section.innerHTML += description;
-
     build_cards(course);
 }
-
 
 // building courses
 function build_cards(course = "", search = undefined){
@@ -41,7 +34,6 @@ function build_cards(course = "", search = undefined){
     cards_container.id = "carouselHeader";
     cards_container.setAttribute("data-ride", "carousel");
     cards_container.setAttribute("data-interval", "false");
-
     let car_inner = document.createElement("div");
     car_inner.className = "carousel-inner";
     let f = true;
@@ -61,7 +53,6 @@ function build_cards(course = "", search = undefined){
                     search = search.toLowerCase()
                     if(!title.includes(search)) continue;
                 }
-
                 if(counter == n){
                     carouselitem.appendChild(carddds);
                     car_inner.appendChild(carouselitem);
@@ -82,13 +73,11 @@ function build_cards(course = "", search = undefined){
         car_inner.appendChild(carouselitem);
     }
     cards_container.appendChild(car_inner);
-    
     let button = document.createElement("button");
     button.className = "carousel-control-prev";
     button.type = "button";
     button.setAttribute("data-bs-target", "#carouselHeader");
     button.setAttribute("data-bs-slide", "prev");
-
     let span1 = document.createElement("span");
     span1.className = "carousel-control-prev-icon";
     span1.setAttribute("aria-hidden","true")
@@ -99,14 +88,11 @@ function build_cards(course = "", search = undefined){
     button.appendChild(span1);
     button.appendChild(span2);
     cards_container.appendChild(button);
-
-
     button = document.createElement("button");
     button.className = "carousel-control-next";
     button.type = "button";
     button.setAttribute("data-bs-target", "#carouselHeader");
     button.setAttribute("data-bs-slide", "next");
-
     span1 = document.createElement("span");
     span1.className = "carousel-control-next-icon";
     span1.setAttribute("aria-hidden","true")
@@ -117,10 +103,8 @@ function build_cards(course = "", search = undefined){
     button.appendChild(span1);
     button.appendChild(span2);
     cards_container.appendChild(button);
-
     section.appendChild(cards_container);
 }
-
 
 function build_card(course, item){
     let instructor = "";
@@ -128,33 +112,26 @@ function build_card(course, item){
     instructor += data.record[course].courses[item].instructors[instr].name + ', ';
     }
     instructor = instructor.slice(0, -2);
-
     let cardlink = document.createElement("a");
     cardlink.href = "";
     cardlink.className = "course-cards_";
     let datacontainer = document.createElement("div");
     datacontainer.className = "course_";
-
     let image = document.createElement("img");
     image.src = data.record[course].courses[item].image;
     image.alt = "course thumbnail";
     image.className = "thumb_";
-                
     let heading = document.createElement("h6");
     let headingtxt = document.createTextNode(data.record[course].courses[item].title);
     heading.appendChild(headingtxt);
-                
     let names = document.createElement("p")
     let namestxt = document.createTextNode(instructor);
     names.appendChild(namestxt);
-
     let ratingcontainer = document.createElement("div");
     ratingcontainer.className = "rating_";
-                
     let rate = document.createElement("span");     
     let ratetxt = document.createTextNode(data.record[course].courses[item].rating.toFixed(2) + " "); 
     rate.appendChild(ratetxt);
-
     let star1 = document.createElement("span");
     star1.className = "fa fa-star";
     let star2 = document.createElement("span");
@@ -171,25 +148,19 @@ function build_card(course, item){
     ratingcontainer.appendChild(star3);
     ratingcontainer.appendChild(star4);
     ratingcontainer.appendChild(star5);
-
     let price = document.createElement("span")
     let pricetxt = document.createTextNode('$' + data.record[course].courses[item].price)
     price.appendChild(pricetxt);
-
     datacontainer.appendChild(image);
     datacontainer.appendChild(heading);
     datacontainer.appendChild(names);
     datacontainer.appendChild(ratingcontainer);
     datacontainer.appendChild(price);
-
     cardlink.appendChild(datacontainer);
-
     return cardlink;
 }
 
-
 // media query for number of course cards
-
 function changeMediaQuery(){
     function change4(four){
         if(four.matches){
@@ -217,28 +188,22 @@ function changeMediaQuery(){
         
     }
 
-
     let four = window.matchMedia("(min-width: 1200px)");
     let three = window.matchMedia("(min-width: 800px) and (max-width: 1199px)");
     let two = window.matchMedia("(min-width: 550px) and (max-width: 799px)");
     let one = window.matchMedia("(min-width: 100px) and (max-width: 549px)");
-
     change1(one);
     change2(two);
     change3(three);
     change4(four);
-
     one.addListener(change1);
     two.addListener(change2);
     three.addListener(change3);
     four.addListener(change4);
-
 }
-
 
 // featch the data on loading 
 fetchdata();
-
 
 // change the courses when change the topic
 for(const item in courses){
@@ -271,10 +236,7 @@ document.forms[0].onsubmit = function(e){
     }
 }   
 
-
-
 changeMediaQuery();
-
 
 window.addEventListener("resize", function(){
     changeMediaQuery();
@@ -285,7 +247,3 @@ window.addEventListener("resize", function(){
     }else
         build_description(cur_course);
 })
-
-
-
-
