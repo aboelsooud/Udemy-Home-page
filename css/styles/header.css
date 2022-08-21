@@ -31,10 +31,6 @@ header{
 }
 
 
-
-/* mobile screen */
-
-
 /* small screen */
 
 @media screen and (min-width: 801px) {
@@ -54,16 +50,4 @@ header{
         justify-content: flex-end;
         width: 100%;
     }
-}
-
-/* medium screen */
-
-@media screen and (min-width: 1040px) {
-    
-}
-
-/* large screen */
-
-@media screen and (min-width: 1200px) {
-    
 }
