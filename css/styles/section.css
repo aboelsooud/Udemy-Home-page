@@ -13,7 +13,6 @@
     margin-bottom: 2%;
 }
 
-
 .topics-tab{
     display: flex;
     flex-wrap: wrap;
@@ -34,17 +33,15 @@
 }
 
 .topics-tab > input:checked + label{
-    color:black;
+    color: black;
     font-weight: bold;
 }
 
 .topics-tab > input:hover + label{
-    color:black;
+    color: black;
     font-weight: bold;
     cursor: pointer;
 }
-
-
 
 .explain{
     border: 1px solid rgb(188, 186, 186);
@@ -59,6 +56,7 @@
     font-size: 120%;
     margin-bottom: -5px;
 }
+
 .explain > p{
     padding-left: 10px; 
     width: 70%;
@@ -85,7 +83,6 @@
     background-color: whitesmoke;
     text-decoration: none;
 }
-
 
 .container{
     display: flex;
@@ -143,7 +140,6 @@ del{
     color: rgb(103, 101, 101);
     font-size: 90%;
 }
-
 
 @media screen and (min-width: 550px) {
     .container > a{
