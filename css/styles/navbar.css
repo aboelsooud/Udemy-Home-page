@@ -6,8 +6,7 @@
     box-shadow: 0px 3px 3px rgb(195, 188, 188);
     gap: 12px;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .logo_{
@@ -47,29 +46,27 @@
 }
 
 .search-field_{
-    border:none;
+    border: none;
     outline-width: 0;
     width: 88%;
     background-color: rgb(244, 244, 244);
-
 }
 
 .cart_{
     width: 50px;
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border: none;
     font-size: 90%;
     font-weight: 550;
 }
 
-
 .log_{
     width: 80px;
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 90%;
@@ -81,7 +78,7 @@
     width: 80px;
     height: 40px;
     background-color: rgb(3, 3, 53);
-    color:white;
+    color: white;
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 80%;
@@ -92,7 +89,7 @@
 .lang_{
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 90%;
@@ -104,7 +101,6 @@ button:hover{
 }
 
 /* mobile screen */
-
 @media screen and (max-width: 800px) {
     .display-small_{
         display: none;
@@ -115,7 +111,6 @@ button:hover{
 }
 
 /* small screen */
-
 @media screen and (min-width: 801px) {
     .display-bar_, .display-udemyBusiness_, .display-teach_{
         display: none;
@@ -123,7 +118,6 @@ button:hover{
 }
 
 /* medium screen */
-
 @media screen and (min-width: 1040px) {
     .display-bar_{
         display: none;
@@ -134,7 +128,6 @@ button:hover{
 }
 
 /* large screen */
-
 @media screen and (min-width: 1200px) {
     .display-bar_{
         display: none;
@@ -146,4 +139,3 @@ button:hover{
         justify-content: space-between;
     }
 }
-

@@ -24,6 +24,7 @@
     width: 100%;
     max-width: 350px;
 }
+
 .content_{
     background-color: white;
     padding: 2%;
@@ -31,16 +32,7 @@
     font-size: 130%;
 }
 
-
-
-/* mobile screen */
-
-@media screen and (max-width: 800px) {
-    
-}
-
 /* small screen */
-
 @media screen and (min-width: 801px) {
     .header_{
         flex-wrap: nowrap;
@@ -54,20 +46,9 @@
     .content_{
         width: 50%;
     }
+
     .fig_{
         justify-content: flex-end;
         width: 100%;
     }
-}
-
-/* medium screen */
-
-@media screen and (min-width: 1040px) {
-    
-}
-
-/* large screen */
-
-@media screen and (min-width: 1200px) {
-    
 }
