@@ -109,7 +109,7 @@ function build_cards(course = "", search = undefined){
 function build_card(course, item){
     let instructor = "";
     for(const instr in data.record[course].courses[item].instructors){
-    instructor += data.record[course].courses[item].instructors[instr].name + ', ';
+        instructor += data.record[course].courses[item].instructors[instr].name + ', ';
     }
     instructor = instructor.slice(0, -2);
     let cardlink = document.createElement("a");
@@ -178,14 +178,12 @@ function changeMediaQuery(){
         if(two.matches){
             n = 2;
         }
-        
     }
 
     function change1(one){
         if(one.matches){
             n = 1;
         }
-        
     }
 
     let four = window.matchMedia("(min-width: 1200px)");
