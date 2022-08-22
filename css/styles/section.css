@@ -131,10 +131,35 @@
     margin-bottom: -1px;
 }
 
-.rating_{
-    font-size: 85%;
+.rate-num{
+    display: inline-block;
     color: goldenrod;
     font-weight: bold;
+}
+
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+}
+   
+.stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+    color: goldenrod;
+}
+   
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+   
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: goldenrod;
 }
 
 .rate_{
@@ -145,7 +170,6 @@ del{
     color: rgb(103, 101, 101);
     font-size: 90%;
 }
-
 
 .last-section{
     width: 90%;

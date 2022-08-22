@@ -24,12 +24,15 @@ function build_description(course){
         <a href=""><b>Explore ${course}</b></a>
     `
     section.innerHTML += description;
+    //build courses cards
     build_cards(course);
 }
 
 // building courses
 function build_cards(course = "", search = undefined){
+    //container of cards
     let cards_container = document.createElement("section");
+    //carousel attributes
     cards_container.className = "container_ carousel slide";
     cards_container.id = "carouselHeader";
     cards_container.setAttribute("data-ride", "carousel");
@@ -44,15 +47,18 @@ function build_cards(course = "", search = undefined){
     let counter = 0;
     // building cards
     for(const item of courses){
+        //check if we build cards for search or not
         if(search != undefined) course = item;
         if(item == course){
             for(const item in data.record[course].courses){
+                // check if search word is included
                 if(search != undefined){
                     let title = data.record[course].courses[item].title;
                     title = title.toLowerCase()
                     search = search.toLowerCase()
                     if(!title.includes(search)) continue;
                 }
+                // build an carousel item depending on the number of cards that should be on screen
                 if(counter == n){
                     carouselitem.appendChild(carddds);
                     car_inner.appendChild(carouselitem);
@@ -72,6 +78,8 @@ function build_cards(course = "", search = undefined){
         carouselitem.appendChild(carddds);
         car_inner.appendChild(carouselitem);
     }
+
+    //build carousel buttons
     cards_container.appendChild(car_inner);
     let button = document.createElement("button");
     button.className = "carousel-control-prev";
@@ -106,6 +114,7 @@ function build_cards(course = "", search = undefined){
     section.appendChild(cards_container);
 }
 
+//build course card
 function build_card(course, item){
     let instructor = "";
     for(const instr in data.record[course].courses[item].instructors){
@@ -127,33 +136,25 @@ function build_card(course, item){
     let names = document.createElement("p")
     let namestxt = document.createTextNode(instructor);
     names.appendChild(namestxt);
-    let ratingcontainer = document.createElement("div");
-    ratingcontainer.className = "rating_";
-    let rate = document.createElement("span");     
+    let rate = document.createElement("span");  
+    rate.className = "rate-num";   
     let ratetxt = document.createTextNode(data.record[course].courses[item].rating.toFixed(2) + " "); 
     rate.appendChild(ratetxt);
-    let star1 = document.createElement("span");
-    star1.className = "fa fa-star";
-    let star2 = document.createElement("span");
-    star2.className = "fa fa-star";
-    let star3 = document.createElement("span");
-    star3.className = "fa fa-star";
-    let star4 = document.createElement("span");
-    star4.className = "fa fa-star";
-    let star5 = document.createElement("span");
-    star5.className = "fa fa-star-half-stroke";
-    ratingcontainer.appendChild(rate);
-    ratingcontainer.appendChild(star1);
-    ratingcontainer.appendChild(star2);
-    ratingcontainer.appendChild(star3);
-    ratingcontainer.appendChild(star4);
-    ratingcontainer.appendChild(star5);
-    let price = document.createElement("span")
+    let ratingcontainer = document.createElement("div");
+    ratingcontainer.className = "stars-outer";
+    let starsconatiner = document.createElement("div");
+    starsconatiner.className = "stars-inner";
+    const rate_percentage = (data.record[course].courses[item].rating.toFixed(2) / 5) * 100;
+    const s = rate_percentage.toFixed(2) + '%';
+    starsconatiner.setAttribute("style", "width: " + s);
+    ratingcontainer.appendChild(starsconatiner);
+    let price = document.createElement("div")
     let pricetxt = document.createTextNode('$' + data.record[course].courses[item].price)
     price.appendChild(pricetxt);
     datacontainer.appendChild(image);
     datacontainer.appendChild(heading);
     datacontainer.appendChild(names);
+    datacontainer.appendChild(rate)
     datacontainer.appendChild(ratingcontainer);
     datacontainer.appendChild(price);
     cardlink.appendChild(datacontainer);
@@ -236,10 +237,12 @@ document.forms[0].onsubmit = function(e){
 
 changeMediaQuery();
 
+// changing media query depending on resizeing the window
 window.addEventListener("resize", function(){
     changeMediaQuery();
     let searchvalue = document.querySelector("[class = 'search-field_']").value;
     let x = searchvalue.split(' ').length - 1;
+    // check if there is a search value
     if(searchvalue !== '' &&  x !== searchvalue.length){
         build_search(searchvalue);
     }else
