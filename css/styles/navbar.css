@@ -39,25 +39,24 @@ nav{
     background-color: rgb(244, 244, 244);
 }
 
-.search-bar > button{
+.submit{
     background-color: transparent;
     border: none;
     outline-width: 0;
 }
 
-.search-bar > input{
-    border:none;
+.search-field{
+    border: none;
     outline-width: 0;
     width: 88%;
     background-color: rgb(244, 244, 244);
-
 }
 
 .cart{
     width: 50px;
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border: none;
     font-size: 90%;
     font-weight: 550;
@@ -67,7 +66,7 @@ nav{
     width: 80px;
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 90%;
@@ -79,7 +78,7 @@ nav{
     width: 80px;
     height: 40px;
     background-color: rgb(3, 3, 53);
-    color:white;
+    color: white;
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 80%;
@@ -90,7 +89,7 @@ nav{
 .lang{
     height: 40px;
     background-color: white;
-    color:rgb(3, 3, 53);
+    color: rgb(3, 3, 53);
     border-width: 1px;
     border-color: rgb(3, 3, 53);
     font-size: 90%;
