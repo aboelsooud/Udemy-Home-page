@@ -1,37 +1,37 @@
-nav{
+.navbar_{ 
     font-size: 90%;
     display: flex;
-    width: calc(100% - 20px);
+    width: calc(100%);
     padding: 10px;
     box-shadow: 0px 3px 3px rgb(195, 188, 188);
     gap: 12px;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
 }
 
-.logo{
+.logo_{
     width: 90px;
 }
 
-.nav-items{
+.nav-items_{
     display: inline-block;
 }
 
-.link{
+.link_{
     color: rgb(3, 3, 53);
     text-decoration: none;
     white-space: nowrap;
 }
 
-.link:visited{
+.link_:visited{
     color: rgb(3, 3, 53);
 }
 
-.link:hover{
+.link_:hover{
     color: rgb(100, 7, 100);
 }
 
-.search-bar{
+.search-bar_{
     width: 60%;
     border: 1px solid rgb(15, 15, 15);
     border-radius: 40px;
@@ -39,20 +39,20 @@ nav{
     background-color: rgb(244, 244, 244);
 }
 
-.submit{
+.submit_{
     background-color: transparent;
     border: none;
     outline-width: 0;
 }
 
-.search-field{
+.search-field_{
     border: none;
     outline-width: 0;
     width: 88%;
     background-color: rgb(244, 244, 244);
 }
 
-.cart{
+.cart_{
     width: 50px;
     height: 40px;
     background-color: white;
@@ -62,7 +62,7 @@ nav{
     font-weight: 550;
 }
 
-.log{
+.log_{
     width: 80px;
     height: 40px;
     background-color: white;
@@ -74,7 +74,7 @@ nav{
     white-space: nowrap;
 }
 
-.sign{
+.sign_{
     width: 80px;
     height: 40px;
     background-color: rgb(3, 3, 53);
@@ -86,7 +86,7 @@ nav{
     white-space: nowrap;
 }
 
-.lang{
+.lang_{
     height: 40px;
     background-color: white;
     color: rgb(3, 3, 53);
@@ -101,45 +101,41 @@ button:hover{
 }
 
 /* mobile screen */
-
 @media screen and (max-width: 800px) {
-    .display-small{
+    .display-small_{
         display: none;
     }
-    nav{
+    .navbar_{
         justify-content: space-between;
     }
 }
 
 /* small screen */
-
 @media screen and (min-width: 801px) {
-    .display-bar, .display-udemyBusiness, .display-teach{
+    .display-bar_, .display-udemyBusiness_, .display-teach_{
         display: none;
     }
 }
 
 /* medium screen */
-
 @media screen and (min-width: 1040px) {
-    .display-bar{
+    .display-bar_{
         display: none;
     }
-    .display-teach{
+    .display-teach_{
         display: inline-block;
     }
 }
 
 /* large screen */
-
 @media screen and (min-width: 1200px) {
-    .display-bar{
+    .display-bar_{
         display: none;
     }
-    .display-teach, .display-udemyBusiness{
+    .display-teach_, .display-udemyBusiness_{
         display: inline-block;
     }
-    nav{
+    .navbar_{
         justify-content: space-between;
     }
 }
